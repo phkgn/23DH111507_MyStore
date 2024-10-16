@@ -5,16 +5,16 @@
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2 class="bg-body">DANH MỤC SẢN PHẨM</h2>
+<h2 class="bg-warning">DANH MỤC CÁC ĐẦU SÁCH</h2>
 
 <p>
     @Html.ActionLink("Thêm mới", "Create", null, new {@class ="btn btn-primary btn-sm"})
 </p>
-<table class="bg-white col-lg-12 col-md-6">
+<table class="bg- white col-lg-12 col-md-6" >
     <tr>
         <th class="bg-warning col-lg-8 col-md-4">
             @*Html.DisplayNameFor(model => model.CategoryName)*@
-            DANH MỤC SẢN PHẨM
+            DANH MỤC TRUYỆN
         </th>
         <th class="bg-warning col-lg-4 col-md-2">
 
@@ -27,9 +27,8 @@
             @Html.DisplayFor(modelItem => item.CategoryName)
         </td>
         <td>
-            @Html.ActionLink("Cập nhật", "Edit", new { id = item.CategoryID }, new { @class = "btn btn-info " }) |
-            @Html.ActionLink("Chi tiết truyện", "Details", new { id = item.CategoryID }, new { @class = "btn btn-info " }) |
-            @Html.ActionLink("Xóa", "Delete", new { id = item.CategoryID }, new { @class = "btn btn-info " })
+            @Html.ActionLink("Cập nhật", "Edit", new { id = item.CategoryID }, new { @class = "btn btn-primary btn-sm" }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.CategoryID }, new { @class = "btn btn-primary btn-sm " })
         </td>
     </tr>
 }
