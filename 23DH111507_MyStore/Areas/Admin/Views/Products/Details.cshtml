@@ -1,0 +1,59 @@
+﻿@model _23DH111507_MyStore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<head>
+    <style>
+        img {
+            height: 250px;
+            max-width: 250px;
+        }
+    </style>
+</head>
+
+<h2 class="bg-warning">CHI TIẾT SẢN PHẨM</h2>
+
+@Html.Partial("PVProdInfo",Model)
+<div class="container-fluid">
+    <div class="div-horizonal">
+        <div class="col-md-4">
+            <img src="@Html.DisplayFor(model => model.ProductImage)" />
+        </div>
+        <div class="col-md-8" style="display:inline-block">
+            <dl>
+                <dt>Tên sản phẩm</dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+
+                <dt>Đơn giá</dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductPrice)
+                </dd>
+
+                <dt>Mô tả</dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProductDescription)
+                </dd>
+                <dt>
+                    Danh mục
+                </dt>
+
+                    @Html.DisplayFor(model => model.Category.CategoryName)
+                </dd>
+                <dt style="padding:10px"></dt>
+                <dd style="padding:10px">
+                </dd>
+            </dl>
+        </div>
+        <div>
+            @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary btn-sm" }) |
+            @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    </div>
+</div>
+
